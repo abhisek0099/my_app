@@ -502,6 +502,7 @@ class _ExplorePageState extends State<ExplorePage> {
                 color: Colors.yellow.shade100,
                 child: Column(
                   children: [
+                    SizedBox(height: 10.0),
                     Row(
                       mainAxisAlignment: .spaceBetween,
                       children: [

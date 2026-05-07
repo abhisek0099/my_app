@@ -13,13 +13,13 @@ class _FileCleanerState extends State<FileCleaner> {
     List<Map<String, dynamic>> ClearedItems = [
       {
         'item': 'Clear browsing data',
-        'desc': 'clean private data ,caches and files',
+        'desc': 'Clean private data ,caches and files',
         'space': 'Clean 384 MB >',
         'image': 'img.png',
       },
       {
         'item': 'Clean Up WhatsApp',
-        'desc': 'clean sorted files in whatsApp',
+        'desc': 'Clean sorted files in whatsApp',
         'space': '3.8 GB >',
         'image': 'img_1.png',
       },
@@ -44,7 +44,7 @@ class _FileCleanerState extends State<FileCleaner> {
         centerTitle: true,
         leading: IconButton(
           onPressed: () {},
-          icon: Icon(Icons.arrow_back_ios_new),
+          icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
         ),
         backgroundColor: Color(0xffe8741a),
       ),
@@ -60,18 +60,27 @@ class _FileCleanerState extends State<FileCleaner> {
                 mainAxisAlignment: .center,
                 children: [
                   SizedBox(
-                    height: 65.0,
+                    height: 82,
                     child: Row(
                       mainAxisAlignment: .center,
                       crossAxisAlignment: .end,
                       children: [
                         Text(
                           '472.5',
-                          style: TextStyle(fontSize: 54, color: Colors.white),
+                          style: TextStyle(
+                            fontSize: 70,
+                            color: Colors.white,
+                            fontWeight: .w600,
+                          ),
                         ),
+                        SizedBox(width: 2.0),
                         Text(
                           'MB',
-                          style: TextStyle(fontSize: 24, color: Colors.white),
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: .w600,
+                          ),
                         ),
                       ],
                     ),
@@ -79,9 +88,9 @@ class _FileCleanerState extends State<FileCleaner> {
                   SizedBox(height: 10.0),
                   Text(
                     'View junk files details >',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
-                  SizedBox(height: 20.0),
+                  SizedBox(height: 30.0),
                   Container(
                     padding: EdgeInsets.all(8.0),
                     width: 170.0,
@@ -109,39 +118,36 @@ class _FileCleanerState extends State<FileCleaner> {
               child: ListView.builder(
                 itemCount: ClearedItems.length,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: ListTile(
-                      leading: SizedBox(
-                        height: 50.0,
-                        width: 50.0,
-                        child: Image.asset(
-                          'assets/images/${ClearedItems[index]['image']}',
-                        ),
+                  return ListTile(
+                    leading: SizedBox(
+                      height: 50.0,
+                      width: 50.0,
+                      child: Image.asset(
+                        'assets/images/${ClearedItems[index]['image']}',
                       ),
-                      title: Text(
-                        ClearedItems[index]['item'],
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.black,
-                          fontWeight: .w500,
-                        ),
+                    ),
+                    title: Text(
+                      ClearedItems[index]['item'],
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.black,
+                        fontWeight: .w500,
                       ),
-                      subtitle: Text(
-                        ClearedItems[index]['desc'],
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.black38,
-                          fontWeight: .w500,
-                        ),
+                    ),
+                    subtitle: Text(
+                      ClearedItems[index]['desc'],
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black38,
+                        fontWeight: .w500,
                       ),
-                      trailing: Text(
-                        ClearedItems[index]['space'],
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          color: Colors.lightBlue,
-                          fontWeight: .w500,
-                        ),
+                    ),
+                    trailing: Text(
+                      ClearedItems[index]['space'],
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        color: Colors.deepPurpleAccent,
+                        fontWeight: .w500,
                       ),
                     ),
                   );

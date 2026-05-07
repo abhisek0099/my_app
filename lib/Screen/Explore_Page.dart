@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_app/Screen/Common_Widgets/CommonWidget.dart';
 
 class ExplorePage extends StatefulWidget {
@@ -41,83 +42,101 @@ class _ExplorePageState extends State<ExplorePage> {
                     child: Row(
                       mainAxisAlignment: .spaceBetween,
                       children: [
-                        Column(
-                          mainAxisAlignment: .center,
-                          crossAxisAlignment: .start,
-                          children: [
-                            SizedBox(
-                              height: 40,
-                              child: Row(
-                                crossAxisAlignment: .end,
-                                children: [
-                                  Text(
-                                    '472',
-                                    style: TextStyle(
-                                      color: Colors.red,
-                                      fontSize: 30,
-                                      fontWeight: .w600,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: Column(
+                            mainAxisAlignment: .center,
+                            crossAxisAlignment: .start,
+                            children: [
+                              SizedBox(
+                                height: 45,
+                                child: Row(
+                                  crossAxisAlignment: .end,
+                                  children: [
+                                    Text(
+                                      '472',
+                                      style: TextStyle(
+                                        color: Colors.red,
+                                        fontSize: 34,
+                                        fontWeight: .w800,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'MB',
-                                    style: TextStyle(
-                                      color: Colors.red,
-                                      fontSize: 18,
-                                      fontWeight: .w600,
+                                    Text(
+                                      'MB',
+                                      style: TextStyle(
+                                        color: Colors.red,
+                                        fontSize: 22,
+                                        fontWeight: .w800,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            Text(
-                              'Junk files',
-                              style: TextStyle(
-                                color: Colors.red,
-                                fontSize: 14,
-                                fontWeight: .w700,
+                              Text(
+                                'Junk files',
+                                style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 16,
+                                  fontWeight: .w700,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                        Icon(Icons.delete_outline, size: 50, color: Colors.red),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: SizedBox(
+                            child: Image.asset('assets/images/img_12.png'),
+                          ),
+                        ),
                       ],
                     ),
                   ),
+                  SizedBox(width: 3.0),
                   RoundedContainer(
                     child: Row(
                       mainAxisAlignment: .spaceBetween,
                       children: [
-                        Column(
-                          mainAxisAlignment: .center,
-                          crossAxisAlignment: .start,
-                          children: [
-                            Text(
-                              'Status',
-                              style: TextStyle(
-                                color: Colors.green,
-                                fontSize: 22,
-                                fontWeight: .w500,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: Column(
+                            mainAxisAlignment: .center,
+                            crossAxisAlignment: .start,
+                            children: [
+                              Text(
+                                'Status',
+                                style: TextStyle(
+                                  color: Colors.green,
+                                  fontSize: 22,
+                                  fontWeight: .bold,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'saver',
-                              style: TextStyle(
-                                color: Colors.green,
-                                fontSize: 22,
-                                fontWeight: .w500,
+                              Text(
+                                'saver',
+                                style: TextStyle(
+                                  color: Colors.green,
+                                  fontSize: 22,
+                                  fontWeight: .bold,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                        CircleAvatar(
-                          radius: 25,
-                          backgroundImage: AssetImage('assets/images/img.png'),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: CircleAvatar(
+                            radius: 25,
+                            backgroundImage: AssetImage(
+                              'assets/images/img.png',
+                            ),
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ],
               ),
+
               RoundedContainer(
                 height: 320.0,
                 width: double.infinity,
@@ -129,10 +148,10 @@ class _ExplorePageState extends State<ExplorePage> {
                       children: [
                         Text(
                           'WeScore',
-                          style: TextStyle(
+                          style: GoogleFonts.poppins(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w600,
                             color: Colors.black,
-                            fontSize: 24.0,
-                            fontWeight: .bold,
                           ),
                         ),
                         Row(
@@ -142,7 +161,7 @@ class _ExplorePageState extends State<ExplorePage> {
                               width: 60,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10.0),
-                                color: Colors.green.shade300,
+                                color: Colors.greenAccent.shade200,
                               ),
                               child: Center(
                                 child: Text(
@@ -165,7 +184,7 @@ class _ExplorePageState extends State<ExplorePage> {
                         RoundedContainer(
                           color: Colors.white,
                           height: 180.0,
-                          width: 170,
+                          width: 175,
                           child: Column(
                             crossAxisAlignment: .start,
                             children: [
@@ -240,7 +259,7 @@ class _ExplorePageState extends State<ExplorePage> {
                         RoundedContainer(
                           color: Colors.white,
                           height: 180.0,
-                          width: 170,
+                          width: 175,
                           child: Column(
                             crossAxisAlignment: .start,
                             children: [
@@ -319,7 +338,8 @@ class _ExplorePageState extends State<ExplorePage> {
                         RoundedContainer(
                           color: Colors.white60,
                           height: 60,
-                          width: 110,
+                          width: 115,
+                          BordRadius: 10.0,
                           child: Row(
                             children: [
                               SizedBox(
@@ -327,11 +347,12 @@ class _ExplorePageState extends State<ExplorePage> {
                                 width: 30,
                                 child: Image.asset('assets/images/img_3.png'),
                               ),
+                              SizedBox(width: 2.0),
                               Text(
                                 'Matches',
                                 style: TextStyle(
-                                  fontWeight: .w500,
-                                  fontSize: 14.0,
+                                  fontWeight: .w600,
+                                  fontSize: 16.0,
                                   color: Colors.black,
                                 ),
                               ),
@@ -342,7 +363,8 @@ class _ExplorePageState extends State<ExplorePage> {
                         RoundedContainer(
                           color: Colors.white60,
                           height: 60,
-                          width: 110,
+                          width: 120,
+                          BordRadius: 10.0,
                           child: Row(
                             children: [
                               SizedBox(
@@ -353,8 +375,8 @@ class _ExplorePageState extends State<ExplorePage> {
                               Text(
                                 'Following',
                                 style: TextStyle(
-                                  fontWeight: .w500,
-                                  fontSize: 14.0,
+                                  fontWeight: .w600,
+                                  fontSize: 16.0,
                                   color: Colors.black,
                                 ),
                               ),
@@ -365,9 +387,11 @@ class _ExplorePageState extends State<ExplorePage> {
                           color: Colors.white60,
                           height: 60,
                           width: 110,
+                          BordRadius: 10.0,
                           child: Row(
                             crossAxisAlignment: .center,
                             children: [
+                              SizedBox(width: 10.0),
                               SizedBox(
                                 height: 30,
                                 width: 30,
@@ -376,8 +400,8 @@ class _ExplorePageState extends State<ExplorePage> {
                               Text(
                                 'Table',
                                 style: TextStyle(
-                                  fontWeight: .w500,
-                                  fontSize: 14.0,
+                                  fontWeight: .w600,
+                                  fontSize: 16.0,
                                   color: Colors.black,
                                 ),
                               ),
@@ -448,15 +472,18 @@ class _ExplorePageState extends State<ExplorePage> {
                               Row(
                                 mainAxisAlignment: .spaceBetween,
                                 children: [
-                                  Text(
-                                    'Ram Ram MC Square',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18.0,
-                                      fontWeight: .w500,
+                                  SizedBox(
+                                    width: 175,
+                                    child: Text(
+                                      ' Ram Ram MC Square',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18.0,
+                                        fontWeight: .w600,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                      maxLines: 1,
                                     ),
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
                                   ),
                                   SizedBox(width: 10.0),
                                   IconButton(

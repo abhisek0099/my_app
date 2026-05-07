@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/Screen/Explore_Page.dart';
+import 'package:liquid_glass_widgets/liquid_glass_setup.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'Screen/Search_engine.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await LiquidGlassWidgets.initialize();
+  runApp(LiquidGlassWidgets.wrap(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
       debugShowCheckedModeBanner: false,
-      home: ExplorePage(),
+      home: SearchEngine(),
     );
   }
 }

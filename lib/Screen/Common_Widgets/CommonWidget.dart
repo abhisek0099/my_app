@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class RoundedContainer extends StatelessWidget {
   final double? height;
@@ -28,6 +29,69 @@ class RoundedContainer extends StatelessWidget {
         color: color == null ? Colors.greenAccent.shade100 : color,
       ),
       child: child,
+    );
+  }
+}
+
+class OptionsList extends StatelessWidget {
+  final String img;
+  final double? height;
+  final String title;
+  final String? subtitle;
+  const OptionsList({
+    super.key,
+    required this.img,
+    required this.title,
+    this.subtitle,
+    this.height,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: height == null ? 54 : height,
+      child: Row(
+        crossAxisAlignment: .center,
+        mainAxisAlignment: .start,
+        children: [
+          SizedBox(
+            height: 25.0,
+            width: 30,
+            child: Image.asset(
+              'assets/images/$img',
+              fit: .contain,
+              filterQuality: .high,
+            ),
+          ),
+          SizedBox(width: 12.0),
+          SizedBox(
+            child: Column(
+              crossAxisAlignment: .start,
+              mainAxisAlignment: .center,
+              children: [
+                SizedBox(height: 8.0),
+                Text(
+                  title,
+                  style: GoogleFonts.inter(
+                    fontSize: 16,
+                    fontWeight: .bold,
+                    color: Colors.black,
+                  ),
+                ),
+                if (subtitle != null)
+                  Text(
+                    '$subtitle',
+                    style: GoogleFonts.inter(
+                      fontSize: 16,
+                      fontWeight: .w500,
+                      color: Colors.black54,
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

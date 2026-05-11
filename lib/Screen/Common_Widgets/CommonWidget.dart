@@ -34,14 +34,14 @@ class RoundedContainer extends StatelessWidget {
 }
 
 class OptionsList extends StatelessWidget {
-  final String img;
+  final String? img;
   final double? height;
-  final String title;
+  final String? title;
   final String? subtitle;
   const OptionsList({
     super.key,
-    required this.img,
-    required this.title,
+    this.img,
+    this.title,
     this.subtitle,
     this.height,
   });
@@ -54,15 +54,17 @@ class OptionsList extends StatelessWidget {
         crossAxisAlignment: .center,
         mainAxisAlignment: .start,
         children: [
-          SizedBox(
-            height: 25.0,
-            width: 30,
-            child: Image.asset(
-              'assets/images/$img',
-              fit: .contain,
-              filterQuality: .high,
+          if (img != null)
+            SizedBox(
+              height: 25.0,
+              width: 30,
+              child: Image.asset(
+                'assets/images/$img',
+                fit: .contain,
+                filterQuality: .high,
+              ),
             ),
-          ),
+          if (img == null) SizedBox(width: 30.0),
           SizedBox(width: 12.0),
           SizedBox(
             child: Column(
@@ -70,14 +72,15 @@ class OptionsList extends StatelessWidget {
               mainAxisAlignment: .center,
               children: [
                 SizedBox(height: 8.0),
-                Text(
-                  title,
-                  style: GoogleFonts.inter(
-                    fontSize: 16,
-                    fontWeight: .bold,
-                    color: Colors.black,
+                if (title != null)
+                  Text(
+                    '$title',
+                    style: GoogleFonts.inter(
+                      fontSize: 16,
+                      fontWeight: .bold,
+                      color: Colors.black,
+                    ),
                   ),
-                ),
                 if (subtitle != null)
                   Text(
                     '$subtitle',

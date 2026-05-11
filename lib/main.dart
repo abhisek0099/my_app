@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_glass_widgets/liquid_glass_setup.dart';
-import 'package:my_app/Screen/HomeScreen.dart';
+import 'package:my_app/Screen/FIle_Manager.dart';
+import 'package:my_app/Screen/Tab_Group.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: TabGroup(),
     );
   }
 }
